@@ -10,6 +10,8 @@
           <h6>Expense LIST</h6>
           {% if user.is_authenticated %}
           <p>Welcome, {{ user.username }}</p>
+         
+
     <a href="{% url 'create' %}"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createExpenseModal">Add</a>
 {% else %}
     <a href="{% url 'login' %}?next={% url 'create' %}" class="btn btn-primary">Login to Add Expense</a>
@@ -49,6 +51,7 @@
                     
                   </td>
                   <td class="align-middle text-center text-sm">
+                    
                     <span class="badge badge-sm bg-gradient-success">{{Expense.expdate}}</span>
                   </td>
                   <td class="align-middle text-center">
@@ -87,6 +90,9 @@
               </tbody>
             </table>
           </div>
+          <tr>
+            <td colspan="9" class="text-left"><strong>Total Expenses:</strong> {{ total_amount }}</td>
+           </tr>
         </div>
       </div>
     </div>

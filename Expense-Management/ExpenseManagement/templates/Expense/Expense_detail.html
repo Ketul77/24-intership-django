@@ -1,31 +1,100 @@
-<!-- expense_detail.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Detail</title>
- </head>
-  <div class="card-body px-0 pt-8 pb-2" >
-      <div class="table-responsive p-0" style="background-color:darkgrey;" >
-         <table class="table align-items-center mb-0">
-              <body>
-                 <h1>Expense Detail</h1>
-                  <div>
-                        <p><strong>Date:</strong> {{ Expense.expdate }}</p>
-                        <p><strong>Category:</strong> {{ Expense.category }}</p>
-                        <p><strong>Amount:</strong> ${{ Expense.amount }}</p>
-                        <p><strong>Description:</strong> {{ Expense.description }}</p>
-                        <p><strong>subcategory:</strong> {{ Expense.subcategory }}</p>
-                        <p><strong>paymentmethod:</strong> {{ Expense.paymentmethod }}</p>
-                        <p><strong>status:</strong> {{ Expense.status }}</p>
-                      <!-- Additional details if applicable -->
-                    </div>
-     
-                 </body>
-            </table>
-       </div>
-    </div>
-</html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
+        .card-body {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2{
+         text-align: center;
+         margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table align-items-center">
+               <h2>Heyy! {{ user.username }} this is your Expense Details</h2>
+                <tbody>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{ Expense.expdate }}</td>
+                    </tr>
+                    <tr>
+                        <th>Category</th>
+                        <td>{{ Expense.category }}</td>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td>${{ Expense.amount }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ Expense.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Subcategory</th>
+                        <td>{{ Expense.subcategory }}</td>
+                    </tr>
+                    <tr>
+                        <th>Payment Method</th>
+                        <td>{{ Expense.paymentmethod }}</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>{{ Expense.status }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

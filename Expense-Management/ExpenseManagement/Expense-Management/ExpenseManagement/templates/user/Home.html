@@ -1,0 +1,47 @@
+ 
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h2>Welcome to Expense Manager</h2>
+        <p class="lead">This is your dashboard where you can manage your expenses.</p>
+        <div class="card mb-4">
+            <div class="card-header">
+                Summary of Expenses
+            </div>
+            <div class="card-body">
+                <p><strong>Total Expenses:</strong> ${{ total_expenses }}</p>
+                <p><strong>Total Categories:</strong> {{ total_categories }}</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Recent Activities
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for activity in recent_activities %}
+                    <li class="list-group-item">{{ activity }}</li>
+                    {% empty %}
+                    <li class="list-group-item">No recent activities</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Quick Actions
+            </div>
+            <div class="card-body">
+                <a href="{% url 'create' %}" class="btn btn-primary btn-block mb-2">Add Expense</a>
+                <a href="{% url 'list' %}" class="btn btn-secondary btn-block">Manage Categories</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,72 +1,108 @@
- {% comment %} {% extends "../base.html" %} {% endcomment %}
- 
- {% block base %}
-  
- {% endblock base %}
-  
-  {% block navbar %}
- <!-- Clear the navbar -->
-{% endblock %}  
-  {% block sidebar %}
-<!-- Clear the sidebar -->
-  {% endblock %}
- {% load static %} {% load crispy_forms_tags %}  
- 
 
-  
+
+
+
+{% load crispy_forms_tags %}  
+
+
 {% comment %} {% block content %} {% endcomment %}
 <div class="container">
   <div class="row">
     <div class="col-md-6"> 
       <h2>Create Expense</h2>
       
+      
       <style>
 
         body {
-          background-image: url('https://esegroup.co.uk/wp-content/uploads/2022/02/Design-2.png');
-          padding: 0px;
+          background-image: url('');
+          padding: 0;
           font-family: Arial, sans-serif;
           margin: 0;
           color: bisque;
-          
-        
-        }
-        .container {
-          max-width: 600px;
-          margin: 50px auto;
+      }
+      
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px; /* Increased padding to add space around the form */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        color: #333; /* Text color for better contrast */
+        text-align: center; /* Center content */
+    }
+    
+      
+      form {
           padding: 20px;
-          
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
       }
-      input[type="Register"] {
-        background-color: #4caf50;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-      input[type="text"], textarea {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-boxSS
+      
+      label {
+          display: block;
+          margin-bottom: 10px;
       }
+      
+      input[type="text"],
+      input[type="number"] {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+      }
+      
+      button {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+          background-color: #0056b3;
+      }
+      
       input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-     
+          background-color: #45a049;
+      }
+
+      /* Button styles */
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+  
       </style>
       
       
       <form method="post" enctype="multipart/form-data" >
         {% csrf_token %}
         {{ form|crispy }}
-       
-        <button type="submit" class="btn btn-primary">Register</button>
+        
+        
+        <div class="text-center">
+          
+         <input type = "submit" value ="Add" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0"> 
+       </div> 
       </form>
       
     </div> 
@@ -74,3 +110,5 @@
 
   {% comment %} {% endblock content %} {% endcomment %}
 </div>
+
+

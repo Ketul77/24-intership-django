@@ -1,3 +1,6 @@
+
+{% block content %}
+     
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +10,66 @@
     <title>Edit Expense</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.ebillity.com/wp-content/uploads/2020/04/blog-expense-tracking.jpg');
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
         .container {
-            width: 60%; /* Adjust width as needed */
-            margin: 0 auto; /* This will center the container horizontally */
+            width: 60%;
+            margin: 50px auto;
             padding: 20px;
+          
+           
+        }
+
+        form {
+            background-image: url('https://www.ebillity.com/wp-content/uploads/2020/04/blog-expense-tracking.jpg');
+            padding: 0px;
+            border-radius: 0px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
+            text-align:center;
         }
-        form {
-            background-image: url("https://images.unsplash.com/photo-1562781105-c53c27ff6007?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
-            background-color: #f2f2f2; /* Change to the desired color */
-            padding: 70px; /* Add padding to improve appearance */
-            border-radius: 5px; /* Optional: Add border radius for rounded corners */
-            text-size-adjust: center;
+
+        form button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align:center;
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #0056b3;
+            text-align:center;
         }
     </style>
 </head>
@@ -36,3 +86,4 @@
 </body>
 </html>
 
+{% endblock content %}

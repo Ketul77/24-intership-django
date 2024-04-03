@@ -1,0 +1,31 @@
+<!-- expense_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Detail</title>
+ </head>
+  <div class="card-body px-0 pt-8 pb-2" >
+      <div class="table-responsive p-0" style="background-color:darkgrey;" >
+         <table class="table align-items-center mb-0">
+              <body>
+                 <h1>Expense Detail</h1>
+                  <div>
+                        <p><strong>Date:</strong> {{ Expense.expdate }}</p>
+                        <p><strong>Category:</strong> {{ Expense.category }}</p>
+                        <p><strong>Amount:</strong> ${{ Expense.amount }}</p>
+                        <p><strong>Description:</strong> {{ Expense.description }}</p>
+                        <p><strong>subcategory:</strong> {{ Expense.subcategory }}</p>
+                        <p><strong>paymentmethod:</strong> {{ Expense.paymentmethod }}</p>
+                        <p><strong>status:</strong> {{ Expense.status }}</p>
+                      <!-- Additional details if applicable -->
+                    </div>
+     
+                 </body>
+            </table>
+       </div>
+    </div>
+</html>
+

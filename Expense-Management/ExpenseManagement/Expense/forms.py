@@ -7,6 +7,9 @@ class ExpenseCreationForm(forms.ModelForm):
         model = Expense
         # fields ='__all__'
         exclude = ['user']
+        widgets = { 
+              'expdate' :forms.DateInput(attrs={'type':'date'})
+              }
 
 
 class categoryForm(forms.ModelForm):

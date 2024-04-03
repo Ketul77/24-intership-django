@@ -30,7 +30,7 @@
             <div class="card card-plain">
               <div class="card-header pb-0 text-start">
                 <h4 class="font-weight-bolder">Sign In</h4>
-                <p class="mb-0">Enter your email and password to sign in</p>
+                <p class="mb-0">Enter Requre details to sign in</p>
               </div>
               <div class="card-body">
                 <form role="form" method ="POST">
@@ -67,7 +67,7 @@
                     </div>
                   
                   </div>
-                  <div class="form-check form-switch">
+                  {% comment %} <div class="form-check form-switch">
                     <input
                       class="form-check-input"
                       type="checkbox"
@@ -76,7 +76,7 @@
                     <label class="form-check-label" for="rememberMe"
                       >Remember me</label
                     >
-                  </div>
+                  </div> {% endcomment %}
                   <div class="text-center">
                     {% comment %} <button
                       type="button"
@@ -84,7 +84,9 @@
                     >
                       Sign in
                     </button> {% endcomment %}
-                    <input type = "submit" value ="login" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">
+                    <a href="{% url "login" %}">
+                    <input type = "submit" value ="sign up" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">
+                    </a>
                   </div>
                 </form>
               </div>
